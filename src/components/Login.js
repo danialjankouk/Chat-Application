@@ -4,11 +4,11 @@ import icon from "../assets/google.png"
 const Login = () => {
     return (
       <div className={styles.container}>
-        <div className={styles.title}>
+        <div className={styles.loginCard}>
           <h2>Welcome to Chatgram</h2>
-        </div>
-        <div>
-          <img src={icon} alt="google" /> Sign in with Goole
+            <div className={styles.button}>
+                <img src={icon} alt="google" /> Sign in with Goole
+            </div>
         </div>
       </div>
     );
