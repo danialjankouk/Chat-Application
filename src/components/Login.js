@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "../components/Login.modul.css";
+import styles from "../components/Login.module.css";
 import icon from "../assets/google.png"
 const Login = () => {
     return (
