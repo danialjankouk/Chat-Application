@@ -2,7 +2,10 @@ import React, { useState, useEffect, useContext } from "react";
 import { auth } from "../Firebase";
 import { useNavigate } from "react-router-dom";
 import { ChatEngine } from "react-chat-engine";
+import styles from "./Chat.module.css"
 import axios from "axios";
+//loaing gif
+import Loading from "../assets/loading.gif";
 //-------------------------------------------------------context-------------------------------------------------------
 import { AuthContext } from "../context/AuthContextProvider";
 //------------------------------------------------------component-----------------------------------------------------
@@ -60,7 +63,7 @@ const Chat = () => {
     return new File([data], "usePhoto.jpg", { type: "image/jpeg" });
   };
   //------------------------------------------------------loading---------------------------------------------
-  if (!user || loading) return "Loading ...";
+    if (!user || loading) return <img src={Loading} alt="loading..." className={styles.loading}/>;
   return (
       <div>
       <Navbar logoutHandler={logoutHandler} />

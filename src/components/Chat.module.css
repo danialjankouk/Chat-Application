@@ -1,0 +1,26 @@
+*{
+    background-color: #ECF0F1;
+}
+.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 200px 0 200px 500px;
+}
+
+@media (max-width: 400px) {
+  .loading {
+    position: relative;
+    right: 525px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+}
+@media (max-width:450px) {
+    .loading{
+        position: relative;
+        right: 525px;
+        overflow: hidden;
+    }
+    
+}
