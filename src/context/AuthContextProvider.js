@@ -2,7 +2,7 @@
  import { auth } from '../Firebase';
 import { useNavigate} from "react-router-dom"
 //CONTEXT
- const AuthContext = createContext()
+export const AuthContext = createContext()
 
 const AuthContextProvider = ({ children }) => {
   const navigate = useNavigate();
@@ -16,6 +16,7 @@ const AuthContextProvider = ({ children }) => {
       if (user) navigate("/chat");
     });
   }, [user, navigate]);
+
   return (
     <div>
       <AuthContext.Provider value={user}>
