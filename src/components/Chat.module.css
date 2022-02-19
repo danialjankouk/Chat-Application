@@ -1,17 +1,17 @@
 *{
-    background-color: #ECF0F1;
+    /* background-color: #ECF0F1; */
 }
 .loading{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 200px 0 200px 500px;
+    padding: 200px 0 200px 650px;
 }
 
 @media (max-width: 400px) {
   .loading {
     position: relative;
-    right: 525px;
+    right: 500px;
     overflow-x: hidden;
     overflow-y: hidden;
   }
@@ -20,6 +20,14 @@
     .loading{
         position: relative;
         right: 525px;
+        overflow: hidden;
+    }
+    
+}
+@media (max-width:350px) {
+    .loading{
+        position: relative;
+        right: 580px;
         overflow: hidden;
     }
     

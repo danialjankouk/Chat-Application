@@ -30,7 +30,7 @@ const Chat = () => {
     axios
       .get("httpsa://api.chatengine.io/users/me", {
         headers: {
-          "project-id": "e02b53f5-4e01-4175-90b2-850aaddfde4c",
+          "project-id": "c82fff43-e53d-406a-9830-f32ae66e14b1",
           "user-name": user.email,
           "user-secret": user.uid,
         },
@@ -42,18 +42,18 @@ const Chat = () => {
         let formdata = new FormData();
         formdata.append("email", user.email);
         formdata.append("username", user.email);
-          formdata.append("secret", user.uid);
-          getFile(user.photoURL)
-              .then(avatar => {
-                  formdata.append("avatar", avatar, avatar.name)
-                  axios.post("https://api.chatengine.io/users/", formdata, {
-                    headers: {
-                      "private-key": "e90fdf6e-2b91-4132-ba1e-fe950e8e759c"
-                    }
-                  })
-                .then(() => setLoading(false))
-                .catch(error => console.log(error))
+        formdata.append("secret", user.uid);
+        getFile(user.photoURL).then((avatar) => {
+          formdata.append("avatar", avatar, avatar.name);
+          axios
+            .post("https://api.chatengine.io/users/", formdata, {
+              headers: {
+                "private-key": "b0b0ca83-e808-417b-92c8-3d35f63e4f29",
+              },
             })
+            .then(() => setLoading(false))
+            .catch((error) => console.log(error));
+        });
       });
   }, [navigate, user]);
 //-----------------------------------------------------get picture------------------------------------------
@@ -65,11 +65,11 @@ const Chat = () => {
   //------------------------------------------------------loading---------------------------------------------
     if (!user || loading) return <img src={Loading} alt="loading..." className={styles.loading}/>;
   return (
-      <div>
+    <div>
       <Navbar logoutHandler={logoutHandler} />
 
       <ChatEngine
-        projectID="e02b53f5-4e01-4175-90b2-850aaddfde4c"
+        projectID="c82fff43-e53d-406a-9830-f32ae66e14b1"
         height="calc(100vh - 50px)"
         userName={user.email}
         userSecret={user.uid}
